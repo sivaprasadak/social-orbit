@@ -1,0 +1,42 @@
+.post-image {
+    width: 100%;
+    margin: 1rem;
+    text-align: center;
+}
+
+.post-image img {
+    width: 60%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 40%;
+    margin: auto;
+}
+
+.empty {
+    height: 25%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 1px;
+    background-color: rgba(235, 222, 252, 0.9878545168067226);
+}
+
+input[type='file'] {
+    visibility: hidden;
+}
+
+.post-image {
+    position: relative;
+    bottom: 1.5rem;
+    box-shadow: 0px 0px 1px;
+    background-color: #8759b2;
+    width: 30%;
+    padding: 1rem;
+    cursor: pointer;
+    color: white;
+}

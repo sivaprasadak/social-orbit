@@ -1,0 +1,16 @@
+<ng-container *ngIf="suggestedUsers.length; else showEmpty">
+    <ng-container *ngFor="let user of suggestedUsers">
+        <mat-card class="card" appearance="outlined">
+            <mat-card-header class="header">
+                <mat-card-title class="header-name">{{user?.fullName}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-actions align="start">
+                <button mat-button class="button" (click)="sendInvitation(user)">Send Invitation</button>
+            </mat-card-actions>
+        </mat-card>
+    </ng-container>
+
+</ng-container>
+<ng-template #showEmpty>
+    <p style="margin: 2rem; width: 20rem;">There are no friends to suggest at the moment!!</p>
+</ng-template>

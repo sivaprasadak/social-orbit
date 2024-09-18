@@ -1,0 +1,12 @@
+<ng-container *ngIf="friends.length; else showEmpty">
+    <ng-container *ngFor="let user of friends">
+        <mat-card class="card" appearance="outlined">
+            <mat-card-header class="header">
+                <mat-card-title class="header-name">{{user?.fullName}}</mat-card-title>
+            </mat-card-header>
+        </mat-card>
+    </ng-container>
+</ng-container>
+<ng-template #showEmpty>
+    <p style="margin: 2rem; width: 20rem;">There are no active friends</p>
+</ng-template>

@@ -1,0 +1,12 @@
+<ng-container *ngIf="articles.length">
+    <section class="wrapper">
+        <p class="heading">Get the top latest news</p>
+        <ng-container *ngFor="let article of articles">
+            <div class="news">
+                <p class="title">{{article.title}}</p>
+                <p class="content">{{ article.description}}</p>
+                <a class="url" [href]="article.url" target="_blank">Click here</a> to know more!!
+            </div>
+        </ng-container>
+    </section>
+</ng-container>

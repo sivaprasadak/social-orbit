@@ -1,0 +1,30 @@
+<div class="col-md-3 login-card">
+    <h4 class="login-page-title">Registration</h4>
+    <form class="login-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="mb-3 form-group">
+            <label for="fname" class="form-label">First name</label>
+            <input type="text" class="form-control fname" id="fname" formControlName="firstName" />
+        </div>
+        <div class="mb-3 form-group">
+            <label for="lname" class="form-label">Last name</label>
+            <input type="text" class="form-control lname" id="lname" formControlName="lastName" />
+        </div>
+        <div class="mb-3 form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control email" id="email" autocomplete="off" formControlName="email" />
+            <ng-container>
+                <span *ngIf="email?.errors?.['email']" class="error">
+                    Enter a valid email id
+                </span>
+            </ng-container>
+        </div>
+        <div class="mb-3 form-group">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control password" id="password" autocomplete="off"
+                formControlName="password">
+        </div>
+        <button type="submit" class="btn btn-primary submit-button"
+            [disabled]="form.status === 'INVALID'">Submit</button>
+    </form>
+    <button type="button" class="btn btn-light back-button" (click)="routeBackToLogin()">Back</button>
+</div>

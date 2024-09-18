@@ -1,0 +1,26 @@
+<ng-container *ngIf="contentLoaded; else showLoading">
+    <div class="login-card">
+        <form class="login-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="mb-3 form-group">
+                <label for="fname" class="form-label">First name</label>
+                <input type="text" class="form-control fname" id="fname" formControlName="firstName" />
+            </div>
+            <div class="mb-3 form-group">
+                <label for="lname" class="form-label">Last name</label>
+                <input type="text" class="form-control lname" id="lname" formControlName="lastName" />
+            </div>
+            <div class="mb-3 form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control email" id="email" autocomplete="off" formControlName="email" />
+            </div>
+            <button type="submit" class="btn btn-primary submit-button"
+                [disabled]="form.status === 'INVALID' || form.pristine">Submit</button>
+            <button type="button" class="btn btn-light back-button" (click)="close()">Close</button>
+        </form>
+    </div>
+</ng-container>
+<ng-template #showLoading>
+    <div class="spinner">
+        <mat-spinner></mat-spinner>
+    </div>
+</ng-template>

@@ -1,0 +1,25 @@
+.image-preview {
+    height: 15rem;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.image-preview img {
+    height: 100%;
+    width: 30rem;
+}
+
+.spinner {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 30rem;
+}
+
+.radio-wrapper {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+}

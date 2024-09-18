@@ -1,0 +1,30 @@
+<div class="home-wrapper">
+    <ng-container *ngIf="contentLoaded; else showLoading">
+        <nav class="navbar navbar-expand-lg">
+            <div class="navbar-container">
+                <div class="navbar-brand">Social Orbit</div>
+                <div class="logout" (click)="onLogOut()">Logout</div>
+            </div>
+        </nav>
+        <section class="content-wrapper">
+            <div [ngClass]="{
+                'sidebar-wrapper': true,
+                'col-md-2': (isAdminUser | async),
+                'col-md-3': !(isAdminUser | async)
+              }">
+                <app-home-side-bars></app-home-side-bars>
+            </div>
+            <div class="router-wrapper">
+                <router-outlet></router-outlet>
+            </div>
+            <div class="news-feed col-md-3">
+                <app-news-feed></app-news-feed>
+            </div>
+        </section>
+    </ng-container>
+    <ng-template #showLoading>
+        <div class="spinner">
+            <mat-spinner></mat-spinner>
+        </div>
+    </ng-template>
+</div>

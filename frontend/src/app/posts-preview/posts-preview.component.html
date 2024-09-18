@@ -1,0 +1,17 @@
+<ng-container *ngIf="contentLoaded; else showLoading">
+    <div class="image-preview" *ngIf="imagePreview != '' && imagePreview && image.valid">
+        <img [src]="imagePreview" alt="" />
+    </div>
+    <div class="radio-wrapper">
+        <mat-radio-group aria-label="Select an option" [ngModel]="selectedPostingOption | async"
+            (change)="onSelection($event)">
+            <mat-radio-button value="private">Private</mat-radio-button>
+            <mat-radio-button value="public">Public</mat-radio-button>
+        </mat-radio-group>
+    </div>
+</ng-container>
+<ng-template #showLoading>
+    <div class="spinner">
+        <mat-spinner></mat-spinner>
+    </div>
+</ng-template>

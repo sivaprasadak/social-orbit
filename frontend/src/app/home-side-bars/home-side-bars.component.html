@@ -1,0 +1,30 @@
+<div class="sidebar-wrapper">
+    <div class="div-wrapper" (click)="onProfile()">
+        <span class="icons"><i class="fa fa-user"></i></span>
+        <div class="label">Profile</div>
+    </div>
+    <div *ngIf="(isAdmin | async)" class="div-wrapper" (click)="getUsers()">
+        <span class="icons"><i class="fa fa-user-friends"></i></span>
+        <div class="label">Users</div>
+    </div>
+    <div *ngIf="(isAdmin | async) === false" class="div-wrapper" (click)="invitationNotification()">
+        <span class="icons nav-icon"><i class="fas fa-bell"></i></span>
+        <div class="label">Notification</div>
+    </div>
+    <div *ngIf="(isAdmin | async) === false" class="div-wrapper" (click)="getFriends()">
+        <span class="icons"><i class="fa fa-user-friends"></i></span>
+        <div class="label">Friends</div>
+    </div>
+    <div *ngIf="(isAdmin | async) === false" class="div-wrapper" (click)="peopleYouMayKnow()">
+        <span class="icons"><i class="fas fa-user-plus"></i></span>
+        <div class="label">People you may know</div>
+    </div>
+    <div *ngIf="(isAdmin | async) === false" class="div-wrapper" (click)="onDeleteAccount()">
+        <span class="icons"><i class="fas fa-user-times"></i></span>
+        <div class="label">Delete Account</div>
+    </div>
+    <div *ngIf="(isAdmin | async) === false" class="div-wrapper post-image-wrapper">
+        <input type="file" #filePicker (change)="onImagePicked($event)" />
+        <div class="post-image" (click)="triggerFileInput()">Post Image</div>
+    </div>
+</div>

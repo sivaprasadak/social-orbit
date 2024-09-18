@@ -1,0 +1,29 @@
+.news {
+    box-shadow: 0px 0px 1px;
+    padding: 1rem;
+    font-size: smaller;
+    margin-bottom: 0.5rem;
+    background-color: rgba(235, 222, 252, 0.9878545168067226);
+    color: #4f1486;
+}
+
+.title {
+    font-weight: 500;
+}
+
+.url {
+    text-decoration: none;
+}
+
+.content {
+    color: black
+}
+
+.heading {
+    font-weight: bold;
+    color: #4f1486;
+}
+
+.wrapper {
+    padding-bottom: 1rem;
+}
